@@ -7,7 +7,9 @@ const _PATH_TO_SOLUTION = joinpath(_ROOT, "solution");
 using Pkg
 if (isfile(joinpath(_ROOT, "Manifest.toml")) == false) # have manifest file, we are good. Otherwise, we need to instantiate the environment
     Pkg.add(path="https://github.com/varnerlab/VLDataScienceMachineLearningPackage.jl.git")
-    Pkg.activate("."); Pkg.resolve(); Pkg.instantiate(); Pkg.update();
+    Pkg.activate("."); Pkg.instantiate();
+else
+    Pkg.activate(".");
 end
 
 # load the required packages -
